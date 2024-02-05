@@ -1,0 +1,28 @@
+@model Bakery.Models.Vendor
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="~/css/site.css">
+  <title>Add Order for @Model.Name</title>
+
+</head>
+
+<body>
+  <h1>Add Order for @Model.Name</h1>
+
+  <form action="/orders" method="post">
+    <input type="hidden" name="vendorId" value="@Model.Id" />
+    <input type="text" name="orderTitle" placeholder="Order Title" required />
+    <textarea name="orderDescription" placeholder="Order Description" required></textarea>
+    <input type="number" name="orderPrice" placeholder="Price" required />
+    <input type="date" name="orderDate" required />
+    <button type="submit">Add Order</button>
+  </form>
+
+  <a href="/vendors/@Model.Id">Back to @Model.Name's Details</a>
+
+</body>
+
+</html>

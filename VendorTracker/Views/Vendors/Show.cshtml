@@ -1,0 +1,39 @@
+@model Bakery.Models.Vendor
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="~/css/site.css">
+  <title>Vendor Details</title>
+@* i am views/vendors/show *@
+</head>
+
+<body>
+  <h1>@Model.Name's Details</h1>
+  <p><strong>Description:</strong> @Model.Description</p>
+
+  <h2>Orders</h2>
+  @if (Model.Orders.Count == 0)
+  {
+    <p>No orders yet.</p>
+  }
+  else
+  {
+    <ul>
+      @foreach (var order in Model.Orders)
+      {
+        <li>
+          <strong>Title:</strong> @order.Title <br/>
+          <strong>Description:</strong> @order.Description <br/>
+          <strong>Price: </strong> @order.Price <br/>
+          <strong>Date:</strong> @order.Date.ToShortDateString()
+        </li>
+      }
+    </ul>
+  }
+<a href="/vendors/@Model.Id/orders/new">New Order</a>
+<a href="/vendors">back to Vendor List</a>
+</body>
+
+</html>
