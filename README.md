@@ -1,7 +1,7 @@
 # Zelena's Bakery Console App
 
 This is a web app for a hypothetical bakery. The purpose is to introduce C#, to practice working with classes and methods, and to continue RGR testing.
-This is an expanded version of last week's project, using objects within objects to create a set of orders per vendor.
+This is an expanded version of last week's project, using objects within objects to create a set of orders per vendor. This has been adapted to be a web app.
 
 ## Technologies Used
 - C#
